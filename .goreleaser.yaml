@@ -3,22 +3,34 @@ before:
   - go mod tidy
   # - go generate ./...
 builds:
-- env:
+- main: ./cmd/gofish
+  tags:
+  - osusergo
+  - netgo
+  - static_build
+  env:
   - CGO_ENABLED=0
   goos:
   - linux
   - windows
   - darwin
-  main: ./cmd/gofish
-checksum:
-  name_template: 'checksums.txt'
+  goarch:
+  - amd64
+  - arm64
+  ldflags:
+  - "-s -w -X github.com/piccobit/gofish/version.version={{.Version}} -X github.com/piccobit/gofish/version.commit={{.Commit}} -X github.com/piccobit/gofish/version.date={{.Date}} -X github.com/fishworks/gofish/version.builtBy=HDS"
+archives:
+- name_template: "{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
+  format_overrides:
+  - goos: windows
+    format: zip
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
 changelog:
   sort: asc
   filters:
     exclude:
-    - '^docs:'
-    - '^test:'
-universal_binaries:
-- replace: true
+    - "^docs:"
+    - "^test:"
+# universal_binaries:
+# - replace: true
