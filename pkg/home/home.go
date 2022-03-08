@@ -72,5 +72,5 @@ func BinPath() string {
 
 // DefaultRig returns the name of the default fishing rig.
 func DefaultRig() string {
-	return path.Join("github.com", "fishworks", "fish-food")
+	return path.Join("github.com", "piccobit", "fish-food")
 }

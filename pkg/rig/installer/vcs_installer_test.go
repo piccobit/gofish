@@ -30,7 +30,7 @@ func TestVCSInstallerSuccess(t *testing.T) {
 		t.Errorf("unexpected error: %s", err)
 	}
 
-	expectedPath := filepath.Join(home.Rigs(), "github.com", "fishworks", "fish-food")
+	expectedPath := filepath.Join(home.Rigs(), "github.com", "piccobit", "fish-food")
 	if i.Path() != expectedPath {
 		t.Errorf("expected path '%s', got %q", expectedPath, i.Path())
 	}

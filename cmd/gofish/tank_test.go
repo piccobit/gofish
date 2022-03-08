@@ -24,7 +24,7 @@ func TestTankFill(t *testing.T) {
 		expectedTank["GOFISH_HOME"] = "C:\\Fish"
 		expectedTank["GOFISH_BARREL"] = "C:\\Fish\\Barrel"
 		expectedTank["GOFISH_RIGS"] = "C:\\Fish\\Rigs"
-		expectedTank["GOFISH_DEFAULT_RIG"] = "C:\\Fish\\Rigs\\github.com\\fishworks\\fish-food"
+		expectedTank["GOFISH_DEFAULT_RIG"] = "C:\\Fish\\Rigs\\github.com\\piccobit\\fish-food"
 	}
 
 	switch runtime.GOOS {
