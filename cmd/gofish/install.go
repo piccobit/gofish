@@ -11,11 +11,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/fishworks/gofish/receipt"
+	"github.com/piccobit/gofish/receipt"
 
-	"github.com/fishworks/gofish"
-	"github.com/fishworks/gofish/pkg/home"
-	"github.com/fishworks/gofish/pkg/ohai"
+	"github.com/piccobit/gofish"
+	"github.com/piccobit/gofish/pkg/home"
+	"github.com/piccobit/gofish/pkg/ohai"
 	"github.com/spf13/cobra"
 	"github.com/yuin/gluamapper"
 	lua "github.com/yuin/gopher-lua"

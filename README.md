@@ -1,12 +1,13 @@
 # GoFish, The Package Manager
 
-## THIS PROJECT IS BEING ARCHIVED
+## Original author
 
-Due to the amount of time and money required to maintain this side project, I am archiving it. Please feel free to [send me an email](mailto:matt.fisher@fishworks.io) if you have any questions or comments.
+The original author of this project is [Matt Fisher](mailto:matt.fisher@fishworks.io).
+Due to the massive amount of time and money he had to spend on this project he decided to stop working on it and [archived](https://github.com/fishworks/gofish) it.
 
-![Build Status](https://github.com/fishworks/gofish/workflows/build/badge.svg)
+In the past I had already contributed some 'receipes' to the companion project [Fish Food](https://github.com/fishworks/fish-food) (which is, BTW, also archived), so I decided to I would try to keep the `GoFish` and its companion project still alive as long as possible.
 
-Features, usage and installation instructions can be found on the [homepage](https://gofi.sh).
+![Build Status](https://github.com/piccobit/gofish/workflows/build/badge.svg)
 
 ## What does GoFish do?
 
@@ -20,20 +21,20 @@ $ gofish install go
 ```
 
 GoFish works across all three major operating systems (Windows, MacOS, and Linux). It installs
-packages into its own directory and symlinks their files into /usr/local (or C:\ProgramData for Windows).
+packages into its own directory and symlinks their files into `/usr/local` (or `C:\ProgramData` for Windows).
 You can think of it as the cross-platform Homebrew.
 
 ## Want to add your project to the list of installable thingies?
 
-Make a PR at [fishworks/fish-food](https://github.com/fishworks/fish-food)! Just make sure to follow the [Contributing Guide](https://gofi.sh#contributing) first.
+Make a PR at [piccobit/fish-food](https://github.com/piccobit/fish-food)! Just make sure to follow the [Contributing Guide](https://gofi.sh#contributing) first.
 
 ## Troubleshooting
 
-For troubleshooting, see the [Troubleshooting Guide](https://gofi.sh#troubleshooting).
+TBD
 
 ## Security
 
-Please email security issues to [Matt Fisher](mailto:matt.fisher@fishworks.io).
+Please email security issues to [HD Stich](mailto:hd@stich.io).
 
 ## License
 

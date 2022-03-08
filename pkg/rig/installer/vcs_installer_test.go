@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/fishworks/gofish/pkg/home"
-	"github.com/fishworks/gofish/pkg/rig"
+	"github.com/piccobit/gofish/pkg/home"
+	"github.com/piccobit/gofish/pkg/rig"
 )
 
 var _ Installer = new(VCSInstaller)
@@ -24,7 +24,7 @@ func TestVCSInstallerSuccess(t *testing.T) {
 		t.Fatalf("Could not create %s: %s", home.Rigs(), err)
 	}
 
-	source := "https://github.com/fishworks/fish-food"
+	source := "https://github.com/piccobit/fish-food"
 	i, err := New(source, "", "")
 	if err != nil {
 		t.Errorf("unexpected error: %s", err)
@@ -41,7 +41,7 @@ func TestVCSInstallerSuccess(t *testing.T) {
 		t.Error("expected a VCSInstaller")
 	}
 
-	expectedName := "github.com/fishworks/fish-food"
+	expectedName := "github.com/piccobit/fish-food"
 	if vi.Name != expectedName {
 		t.Errorf("expected name '%s', got '%s'", expectedName, vi.Name)
 	}
@@ -70,7 +70,7 @@ func TestVCSInstallerUpdate(t *testing.T) {
 		t.Fatalf("Could not create %s: %s", home.Rigs(), err)
 	}
 
-	source := "https://github.com/fishworks/fish-food"
+	source := "https://github.com/piccobit/fish-food"
 	i, err := New(source, "", "")
 	if err != nil {
 		t.Errorf("unexpected error: %s", err)

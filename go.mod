@@ -1,6 +1,4 @@
-module github.com/fishworks/gofish
-
-replace github.com/fishworks/gofish => github.com/piccobit/gofish v0.14.1-0.20220308075716-b69088842746
+module github.com/piccobit/gofish
 
 go 1.17
 

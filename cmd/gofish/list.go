@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
-	"github.com/fishworks/gofish"
-	"github.com/fishworks/gofish/pkg/home"
+	"github.com/piccobit/gofish"
+	"github.com/piccobit/gofish/pkg/home"
 	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
 )

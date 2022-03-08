@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/fishworks/gofish/pkg/home"
+	"github.com/piccobit/gofish/pkg/home"
 	"github.com/spf13/cobra"
 )
 

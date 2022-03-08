@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/fishworks/gofish"
+	"github.com/piccobit/gofish"
 
 	"github.com/bacongobbler/browser"
 	"github.com/spf13/cobra"

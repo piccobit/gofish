@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/fishworks/gofish/pkg/home"
-	"github.com/fishworks/gofish/pkg/ohai"
-	"github.com/fishworks/gofish/pkg/rig/installer"
+	"github.com/piccobit/gofish/pkg/home"
+	"github.com/piccobit/gofish/pkg/ohai"
+	"github.com/piccobit/gofish/pkg/rig/installer"
 	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
 )

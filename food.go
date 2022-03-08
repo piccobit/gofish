@@ -17,10 +17,10 @@ import (
 	"github.com/mholt/archiver/v3"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/fishworks/gofish/pkg/home"
-	"github.com/fishworks/gofish/pkg/osutil"
-	"github.com/fishworks/gofish/receipt"
-	"github.com/fishworks/gofish/version"
+	"github.com/piccobit/gofish/pkg/home"
+	"github.com/piccobit/gofish/pkg/osutil"
+	"github.com/piccobit/gofish/receipt"
+	"github.com/piccobit/gofish/version"
 )
 
 // Food provides metadata to install a piece of software.
@@ -128,7 +128,7 @@ func (f *Food) Install() error {
 	}
 
 	// special case: gofish is replacing itself on windows
-	// https://github.com/fishworks/gofish/issues/46
+	// https://github.com/piccobit/gofish/issues/46
 	if runtime.GOOS == "windows" && f.Name == "gofish" {
 		gofishBinPath := filepath.Join(home.HomePrefix, "bin/gofish.exe")
 		exists, err := osutil.Exists(gofishBinPath)
