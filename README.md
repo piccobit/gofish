@@ -5,7 +5,7 @@
 The original author of this project is [Matt Fisher](mailto:matt.fisher@fishworks.io).
 Due to the massive amount of time and money he had to spend on this project he decided to stop working on it and [archived](https://github.com/fishworks/gofish) it.
 
-In the past I had already contributed some 'receipes' to the companion project [Fish Food](https://github.com/fishworks/fish-food) (which is, BTW, also archived), so I decided to I would try to keep the `GoFish` and its companion project still alive as long as possible.
+In the past I had already contributed some 'receipes' to the companion project [Fish Food](https://github.com/fishworks/fish-food) (which is, BTW, also archived), so I decided that I would try to keep the `GoFish` and its companion project still alive as long as possible.
 
 ![Build Status](https://github.com/piccobit/gofish/workflows/build/badge.svg)
 
