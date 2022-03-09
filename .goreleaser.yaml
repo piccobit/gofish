@@ -4,6 +4,8 @@ before:
   # - go generate ./...
 builds:
 - main: ./cmd/gofish
+  flags:
+  - -trimpath
   tags:
   - osusergo
   - netgo
@@ -22,8 +24,9 @@ builds:
   - -w
   - -X github.com/piccobit/gofish/version.version={{.Version}}
   - -X github.com/piccobit/gofish/version.commit={{.Commit}}
-  - -X github.com/piccobit/gofish/version.date={{.Date}}
+  - -X github.com/piccobit/gofish/version.date={{.CommitDate}}
   - -X github.com/piccobit/gofish/version.buildBy=HDS
+  mod_timestamp: "{{ .CommitTimestamp }}"
 archives:
 - name_template: "{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
   format_overrides:
