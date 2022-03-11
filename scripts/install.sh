@@ -23,10 +23,10 @@
 # Ripped from github.com/technosophos/helm-template's get-binary.sh script, with a few tweaks to fetch gofish.
 
 PROJECT_NAME="gofish"
-PROJECT_GH="fishworks/gofish"
+PROJECT_GH="piccobit/${PROJECT_NAME}"
 
 : ${INSTALL_PREFIX:="/usr/local/bin"}
-: ${GOFISH_VERSION:="v0.15.1"}
+: ${GOFISH_VERSION:="0.16.2"}
 
 if [[ $SKIP_BIN_INSTALL == "1" ]]; then
   echo "Skipping binary install"
@@ -77,7 +77,7 @@ verifySupported() {
 
 # getDownloadURL checks the latest available version.
 getDownloadURL() {
-  DOWNLOAD_URL="https://gofi.sh/releases/$PROJECT_NAME-$GOFISH_VERSION-$OS-$ARCH.tar.gz"
+  DOWNLOAD_URL="https://github.com/${PROJECT_GH}/releases/download/v${GOFISH_VERSION}/${PROJECT_NAME}-${GOFISH_VERSION}-${OS}-${ARCH}.zip"
 }
 
 # downloadFile downloads the latest binary package and also the checksum
