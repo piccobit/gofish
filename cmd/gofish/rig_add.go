@@ -3,8 +3,8 @@ package main
 import (
 	"time"
 
-	"github.com/piccobit/gofish/pkg/ohai"
-	"github.com/piccobit/gofish/pkg/rig/installer"
+	"github.com/tinned-fish/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish/pkg/rig/installer"
 	"github.com/spf13/cobra"
 )
 

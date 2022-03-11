@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/piccobit/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/pkg/home"
 	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
 )

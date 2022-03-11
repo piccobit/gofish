@@ -10,8 +10,8 @@ import (
 	"github.com/Masterminds/semver"
 	"github.com/Masterminds/vcs"
 
-	"github.com/piccobit/gofish/pkg/home"
-	"github.com/piccobit/gofish/pkg/rig"
+	"github.com/tinned-fish/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/pkg/rig"
 )
 
 //VCSInstaller installs rigs from a remote repository

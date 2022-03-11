@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/piccobit/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/pkg/home"
 	"github.com/spf13/cobra"
 )
 

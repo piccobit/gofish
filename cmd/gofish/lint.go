@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/piccobit/gofish"
-	"github.com/piccobit/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish"
+	"github.com/tinned-fish/gofish/pkg/ohai"
 	"github.com/spf13/cobra"
 	"github.com/yuin/gluamapper"
 	lua "github.com/yuin/gopher-lua"

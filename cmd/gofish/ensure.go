@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/piccobit/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish/pkg/ohai"
 )
 
 // ensureFood checks to see if the default fish food exists.
@@ -12,7 +12,7 @@ func ensureFood() error {
 	ohai.Ohailn("Installing default fish food...")
 
 	addArgs := []string{
-		"https://github.com/piccobit/fish-food",
+		"https://github.com/tinned-fish/fish-food",
 	}
 
 	rigCmd, _, err := rootCmd.Find([]string{"rig", "add"})

@@ -5,7 +5,7 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/piccobit/gofish/pkg/lazypath"
+	"github.com/tinned-fish/gofish/pkg/lazypath"
 )
 
 // DefaultHomeEnvVar defines the environment variable used to look up the home directory.
@@ -72,5 +72,5 @@ func BinPath() string {
 
 // DefaultRig returns the name of the default fishing rig.
 func DefaultRig() string {
-	return path.Join("github.com", "piccobit", "fish-food")
+	return path.Join("github.com", "tinned-fish", "fish-food")
 }

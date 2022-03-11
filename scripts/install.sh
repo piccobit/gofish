@@ -23,7 +23,7 @@
 # Ripped from github.com/technosophos/helm-template's get-binary.sh script, with a few tweaks to fetch gofish.
 
 PROJECT_NAME="gofish"
-PROJECT_GH="piccobit/${PROJECT_NAME}"
+PROJECT_GH="tinned-fish/${PROJECT_NAME}"
 
 : ${INSTALL_PREFIX:="/usr/local/bin"}
 : ${GOFISH_VERSION:="0.16.2"}

@@ -3,7 +3,7 @@ package main
 import (
 	"path/filepath"
 
-	"github.com/piccobit/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/pkg/home"
 )
 
 type tank map[string]string

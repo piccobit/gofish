@@ -1,4 +1,4 @@
-module github.com/piccobit/gofish
+module github.com/tinned-fish/gofish
 
 go 1.17
 

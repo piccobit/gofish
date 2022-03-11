@@ -7,8 +7,8 @@ Due to the massive amount of time and money he had to spend on this project he d
 
 In the past I had already contributed some 'receipes' to the companion project [Fish Food](https://github.com/fishworks/fish-food) (which is, BTW, also archived), so I decided that I would try to keep the `GoFish` and its companion project still alive as long as possible.
 
-[![Build Status](https://github.com/piccobit/gofish/actions/workflows/main.yaml/badge.svg)](https://github.com/piccobit/gofish/actions/workflows/main.yaml)
-[![Release Build Status](https://github.com/piccobit/gofish/actions/workflows/release.yaml/badge.svg)](https://github.com/piccobit/gofish/actions/workflows/release.yaml)
+[![Build Status](https://github.com/tinned-fish/gofish/actions/workflows/main.yaml/badge.svg)](https://github.com/tinned-fish/gofish/actions/workflows/main.yaml)
+[![Release Build Status](https://github.com/tinned-fish/gofish/actions/workflows/release.yaml/badge.svg)](https://github.com/tinned-fish/gofish/actions/workflows/release.yaml)
 
 ## What does GoFish do?
 
@@ -27,7 +27,7 @@ You can think of it as the cross-platform Homebrew.
 
 ## Want to add your project to the list of installable thingies?
 
-Make a PR at [piccobit/fish-food](https://github.com/piccobit/fish-food)! Just make sure to follow the [Contributing Guide](https://gofi.sh#contributing) first.
+Make a PR at [tinned-fish/fish-food](https://github.com/tinned-fish/fish-food)! Just make sure to follow the [Contributing Guide](https://gofi.sh#contributing) first.
 
 ## Troubleshooting
 

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/piccobit/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish/pkg/ohai"
 	"github.com/spf13/cobra"
 )
 

@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/piccobit/gofish/pkg/home"
-	"github.com/piccobit/gofish/pkg/rig"
+	"github.com/tinned-fish/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/pkg/rig"
 )
 
 var _ Installer = new(VCSInstaller)
@@ -24,13 +24,13 @@ func TestVCSInstallerSuccess(t *testing.T) {
 		t.Fatalf("Could not create %s: %s", home.Rigs(), err)
 	}
 
-	source := "https://github.com/piccobit/fish-food"
+	source := "https://github.com/tinned-fish/fish-food"
 	i, err := New(source, "", "")
 	if err != nil {
 		t.Errorf("unexpected error: %s", err)
 	}
 
-	expectedPath := filepath.Join(home.Rigs(), "github.com", "piccobit", "fish-food")
+	expectedPath := filepath.Join(home.Rigs(), "github.com", "tinned-fish", "fish-food")
 	if i.Path() != expectedPath {
 		t.Errorf("expected path '%s', got %q", expectedPath, i.Path())
 	}
@@ -41,7 +41,7 @@ func TestVCSInstallerSuccess(t *testing.T) {
 		t.Error("expected a VCSInstaller")
 	}
 
-	expectedName := "github.com/piccobit/fish-food"
+	expectedName := "github.com/tinned-fish/fish-food"
 	if vi.Name != expectedName {
 		t.Errorf("expected name '%s', got '%s'", expectedName, vi.Name)
 	}
@@ -70,7 +70,7 @@ func TestVCSInstallerUpdate(t *testing.T) {
 		t.Fatalf("Could not create %s: %s", home.Rigs(), err)
 	}
 
-	source := "https://github.com/piccobit/fish-food"
+	source := "https://github.com/tinned-fish/fish-food"
 	i, err := New(source, "", "")
 	if err != nil {
 		t.Errorf("unexpected error: %s", err)

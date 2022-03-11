@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/piccobit/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/pkg/home"
 )
 
 func TestTankFill(t *testing.T) {
@@ -16,7 +16,7 @@ func TestTankFill(t *testing.T) {
 		"GOFISH_HOME":        "/usr/local/Fish",
 		"GOFISH_BARREL":      "/usr/local/Fish/Barrel",
 		"GOFISH_RIGS":        "/usr/local/Fish/Rigs",
-		"GOFISH_DEFAULT_RIG": "/usr/local/Fish/Rigs/github.com/piccobit/fish-food",
+		"GOFISH_DEFAULT_RIG": "/usr/local/Fish/Rigs/github.com/tinned-fish/fish-food",
 	}
 
 	if runtime.GOOS == "windows" {
@@ -24,7 +24,7 @@ func TestTankFill(t *testing.T) {
 		expectedTank["GOFISH_HOME"] = "C:\\Fish"
 		expectedTank["GOFISH_BARREL"] = "C:\\Fish\\Barrel"
 		expectedTank["GOFISH_RIGS"] = "C:\\Fish\\Rigs"
-		expectedTank["GOFISH_DEFAULT_RIG"] = "C:\\Fish\\Rigs\\github.com\\piccobit\\fish-food"
+		expectedTank["GOFISH_DEFAULT_RIG"] = "C:\\Fish\\Rigs\\github.com\\tinned-fish\\fish-food"
 	}
 
 	switch runtime.GOOS {

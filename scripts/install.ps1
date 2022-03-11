@@ -2,7 +2,7 @@ $version = "0.16.2"
 if (-Not $env:VERSION -eq $null) {
   $version = "$env:VERSION"
 }
-$url = "https://github.com/piccobit/gofish/releases/download/v${version}/gofish-${version}-windows-amd64.zip"
+$url = "https://github.com/tinned-fish/gofish/releases/download/v${version}/gofish-${version}-windows-amd64.zip"
 
 if ($env:TEMP -eq $null) {
   $env:TEMP = Join-Path $env:SystemDrive 'temp'
