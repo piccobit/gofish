@@ -5,6 +5,8 @@ on:
   push:
     branch:
     - "main"
+    tags:
+    - '!v*'
 
 permissions:
   contents: write
