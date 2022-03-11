@@ -41,3 +41,6 @@ snapshot:
 changelog:
   use: github
   sort: asc
+release:
+  extra_files:
+  - glob: ./scripts/install.*
