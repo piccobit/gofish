@@ -1,43 +1,76 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 	"github.com/tinned-fish/gofish/internal/gofish"
 )
 
 func newCleanupCmd() *cobra.Command {
+	var dryRun bool
 	cmd := &cobra.Command{
 		Use:   "cleanup <food...>",
 		Short: "cleanup unlinked fish food",
-		Args:  cobra.MinimumNArgs(1),
+		// Args:  cobra.MinimumNArgs(0),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			var fudz []*gofish.Food
-			for _, arg := range args {
-				f, err := getFood(arg)
-				if err != nil {
-					return err
+
+			if len(args) >= 1 {
+				for _, arg := range args {
+					f, err := getFood(arg)
+					if err != nil {
+						return err
+					}
+					fudz = append(fudz, f)
 				}
-				fudz = append(fudz, f)
-			}
-			for _, f := range fudz {
-				versions := findFoodVersions(f.Name)
-				if len(versions) > 1 {
-					for _, ver := range versions {
-						f, err := getFood(f.Name)
-						if err != nil {
-							return err
-						}
-						f.Version = ver
-						if !f.Linked() {
-							if err := f.Uninstall(); err != nil {
-								return err
-							}
-						}
+
+				for _, f := range fudz {
+					err := unlinkVersions(f.Name, dryRun)
+					if err != nil {
+						return err
+					}
+				}
+			} else {
+				for _, f := range findFood() {
+					err := unlinkVersions(f, dryRun)
+					if err != nil {
+						return err
 					}
 				}
 			}
+
 			return nil
 		},
 	}
+
+	d := cmd.Flags()
+	d.BoolVarP(&dryRun, "dry-run", "n", false, "don't cleanup, just show what would be done")
+
 	return cmd
+}
+
+func unlinkVersions(n string, dryRun bool) error {
+	versions := findFoodVersions(n)
+	if len(versions) > 1 {
+		for _, ver := range versions {
+			f, err := getFood(n)
+			if err != nil {
+				return err
+			}
+
+			f.Version = ver
+
+			if !f.Linked() {
+				if dryRun {
+					fmt.Printf("Would uninstall version '%s' of package '%s'\n", f.Version, f.Name)
+				} else {
+					if err := f.Uninstall(); err != nil {
+						return err
+					}
+				}
+			}
+		}
+	}
+	return nil
 }

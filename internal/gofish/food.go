@@ -191,6 +191,8 @@ func (f *Food) Uninstall() error {
 		if err := f.Unlink(pkg); err != nil {
 			return err
 		}
+
+		fmt.Printf("Uninstalled version '%s' of package '%s'", f.Version, f.Name)
 	}
 	barrelDir := filepath.Join(home.Barrel(), f.Name, f.Version)
 	os.Remove(filepath.Join(home.Barrel(), f.Name, receipt.ReceiptFilename))
