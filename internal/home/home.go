@@ -5,7 +5,7 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/tinned-fish/gofish/pkg/lazypath"
+	"github.com/tinned-fish/gofish/internal/lazypath"
 )
 
 // DefaultHomeEnvVar defines the environment variable used to look up the home directory.

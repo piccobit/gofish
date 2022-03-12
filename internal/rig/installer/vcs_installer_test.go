@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/tinned-fish/gofish/pkg/home"
-	"github.com/tinned-fish/gofish/pkg/rig"
+	"github.com/tinned-fish/gofish/internal/home"
+	"github.com/tinned-fish/gofish/internal/rig"
 )
 
 var _ Installer = new(VCSInstaller)

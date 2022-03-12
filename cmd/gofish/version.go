@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/tinned-fish/gofish/version"
 	"github.com/spf13/cobra"
+	"github.com/tinned-fish/gofish/version"
 )
 
 func newVersionCmd() *cobra.Command {

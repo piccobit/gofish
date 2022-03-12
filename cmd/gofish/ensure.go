@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/tinned-fish/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish/internal/ohai"
 )
 
 // ensureFood checks to see if the default fish food exists.

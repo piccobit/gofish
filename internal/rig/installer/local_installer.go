@@ -4,8 +4,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/tinned-fish/gofish/pkg/home"
-	"github.com/tinned-fish/gofish/pkg/rig"
+	"github.com/tinned-fish/gofish/internal/home"
+	"github.com/tinned-fish/gofish/internal/rig"
 )
 
 // LocalInstaller installs rigs from the filesystem

@@ -11,11 +11,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tinned-fish/gofish/receipt"
+	"github.com/tinned-fish/gofish/internal/gofish"
+	"github.com/tinned-fish/gofish/internal/home"
+	"github.com/tinned-fish/gofish/internal/ohai"
+	"github.com/tinned-fish/gofish/internal/receipt"
 
-	"github.com/tinned-fish/gofish"
-	"github.com/tinned-fish/gofish/pkg/home"
-	"github.com/tinned-fish/gofish/pkg/ohai"
 	"github.com/spf13/cobra"
 	"github.com/yuin/gluamapper"
 	lua "github.com/yuin/gopher-lua"

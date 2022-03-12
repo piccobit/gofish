@@ -8,7 +8,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/tinned-fish/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/internal/home"
 	"github.com/gosuri/uitable"
 	"github.com/lithammer/fuzzysearch/fuzzy"
 	log "github.com/sirupsen/logrus"

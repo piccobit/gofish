@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/tinned-fish/gofish/pkg/home"
-	"github.com/tinned-fish/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish/internal/home"
+	"github.com/tinned-fish/gofish/internal/ohai"
 	"github.com/spf13/cobra"
 )
 

@@ -6,7 +6,8 @@ import (
 	"path/filepath"
 	"text/template"
 
-	"github.com/tinned-fish/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/internal/home"
+
 	"github.com/spf13/cobra"
 )
 

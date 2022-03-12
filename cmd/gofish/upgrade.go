@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/Masterminds/semver"
-	"github.com/tinned-fish/gofish/pkg/ohai"
+	"github.com/tinned-fish/gofish/internal/ohai"
 	"github.com/spf13/cobra"
 )
 

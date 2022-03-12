@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/tinned-fish/gofish/pkg/home"
+	"github.com/tinned-fish/gofish/internal/home"
 )
 
 func TestSearch(t *testing.T) {
