@@ -7,7 +7,7 @@ require (
 	github.com/Masterminds/vcs v1.13.1
 	github.com/bacongobbler/browser v1.1.0
 	github.com/gosuri/uitable v0.0.4
-	github.com/kyokomi/emoji v2.2.4+incompatible
+	github.com/kyokomi/emoji/v2 v2.2.9
 	github.com/lithammer/fuzzysearch v1.1.3
 	github.com/mholt/archiver/v3 v3.5.1
 	github.com/sirupsen/logrus v1.8.1

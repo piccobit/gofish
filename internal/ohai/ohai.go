@@ -3,7 +3,7 @@ package ohai
 import (
 	"fmt"
 
-	"github.com/kyokomi/emoji"
+	"github.com/kyokomi/emoji/v2"
 )
 
 // Ohai displays an informative message.

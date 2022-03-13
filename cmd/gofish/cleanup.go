@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 	"github.com/tinned-fish/gofish/internal/gofish"
+	"github.com/tinned-fish/gofish/internal/ohai"
 )
 
 func newCleanupCmd() *cobra.Command {
@@ -51,6 +50,12 @@ func newCleanupCmd() *cobra.Command {
 }
 
 func unlinkVersions(n string, dryRun bool) error {
+	if Pinned(n) {
+		ohai.Ohaif("%s is pinned. Please use `gofish unpin %s` to allow cleanup.\n", n, n)
+
+		return nil
+	}
+
 	versions := findFoodVersions(n)
 	if len(versions) > 1 {
 		for _, ver := range versions {
@@ -63,7 +68,7 @@ func unlinkVersions(n string, dryRun bool) error {
 
 			if !f.Linked() {
 				if dryRun {
-					fmt.Printf("Would uninstall version '%s' of package '%s'\n", f.Version, f.Name)
+					ohai.Ohaif("Would uninstall version '%s' of package '%s'\n", f.Version, f.Name)
 				} else {
 					if err := f.Uninstall(); err != nil {
 						return err
@@ -72,5 +77,6 @@ func unlinkVersions(n string, dryRun bool) error {
 			}
 		}
 	}
+
 	return nil
 }

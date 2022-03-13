@@ -16,6 +16,7 @@ import (
 
 	"github.com/mholt/archiver/v3"
 	log "github.com/sirupsen/logrus"
+	"github.com/tinned-fish/gofish/internal/ohai"
 	"github.com/tinned-fish/gofish/version"
 
 	"github.com/tinned-fish/gofish/internal/home"
@@ -192,7 +193,7 @@ func (f *Food) Uninstall() error {
 			return err
 		}
 
-		fmt.Printf("Uninstalled version '%s' of package '%s'", f.Version, f.Name)
+		ohai.Ohaif("Uninstalled version '%s' of package '%s'", f.Version, f.Name)
 	}
 	barrelDir := filepath.Join(home.Barrel(), f.Name, f.Version)
 	os.Remove(filepath.Join(home.Barrel(), f.Name, receipt.ReceiptFilename))

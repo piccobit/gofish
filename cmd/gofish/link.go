@@ -5,6 +5,7 @@ import (
 	"runtime"
 
 	"github.com/spf13/cobra"
+	"github.com/tinned-fish/gofish/internal/ohai"
 )
 
 func newLinkCmd() *cobra.Command {
@@ -13,6 +14,12 @@ func newLinkCmd() *cobra.Command {
 		Short: "link fish food",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
+			if Pinned(args[0]) {
+				ohai.Ohaif("%s is pinned. Please use `gofish unpin %s` to allow linking.\n", args[0], args[0])
+
+				return nil
+			}
+
 			f, err := getFood(args[0])
 			if err != nil {
 				return err

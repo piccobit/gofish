@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/Masterminds/semver"
-	"github.com/tinned-fish/gofish/internal/ohai"
 	"github.com/spf13/cobra"
+	"github.com/tinned-fish/gofish/internal/ohai"
 )
 
 func newUpgradeCmd() *cobra.Command {
@@ -31,6 +31,13 @@ func newUpgradeCmd() *cobra.Command {
 					ohai.Ohaif("%s: no installed versions to upgrade\n", name)
 					continue
 				}
+
+				if Pinned(name) {
+					ohai.Ohaif("%s is pinned. Please use `gofish unpin %s` to allow upgrading.\n", name, name)
+
+					continue
+				}
+
 				vs := make(semver.Collection, len(installedVersions))
 				for i, r := range installedVersions {
 					v, err := semver.NewVersion(r)

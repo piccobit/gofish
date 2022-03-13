@@ -52,6 +52,7 @@ func newInstallCmd() *cobra.Command {
 						return fmt.Errorf("%d fish food with the name '%s' was found: %v", len(relevantFood), fishFood, relevantFood)
 					}
 				}
+
 				food, err := getFood(fishFood)
 				if err != nil {
 					return err
