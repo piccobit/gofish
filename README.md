@@ -34,7 +34,7 @@ TBD
 
 ## Security
 
-Please email security issues to [HD Stich](mailto:hd@stich.io).
+Please email security issues to [GoFish Security](mailto:security@gofish.dev).
 
 ## License
 
