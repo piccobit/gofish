@@ -2,14 +2,14 @@ $version = "0.18.0"
 if (-Not $env:VERSION -eq $null) {
   $version = "$env:VERSION"
 }
-$url = "https://github.com/tinned-fish/gofish/releases/download/v${version}/gofish-${version}-windows-amd64.zip"
+$url = "https://github.com/tinned-fish/gofish/releases/download/v${version}/gofish-${version}-windows-amd64.tar.gz"
 
 if ($env:TEMP -eq $null) {
   $env:TEMP = Join-Path $env:SystemDrive 'temp'
 }
 $tempDir = Join-Path $env:TEMP 'Fish'
 if (![System.IO.Directory]::Exists($tempDir)) {[void][System.IO.Directory]::CreateDirectory($tempDir)}
-$file = Join-Path $env:TEMP "gofish-${version}-windows-amd64.zip"
+$file = Join-Path $env:TEMP "gofish-${version}-windows-amd64.tar.gz"
 
 # Download gofish
 Write-Output "Downloading '$url'"

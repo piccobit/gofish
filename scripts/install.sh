@@ -78,7 +78,7 @@ verifySupported() {
 
 # getDownloadURL checks the latest available version.
 getDownloadURL() {
-  DOWNLOAD_URL="https://github.com/${PROJECT_GH}/releases/download/v${GOFISH_VERSION}/${PROJECT_NAME}-${GOFISH_VERSION}-${OS}-${ARCH}.zip"
+  DOWNLOAD_URL="https://github.com/${PROJECT_GH}/releases/download/v${GOFISH_VERSION}/${PROJECT_NAME}-${GOFISH_VERSION}-${OS}-${ARCH}.tar.gz"
 }
 
 # downloadFile downloads the latest binary package and also the checksum
