@@ -26,7 +26,7 @@ PROJECT_NAME="gofish"
 PROJECT_GH="tinned-fish/${PROJECT_NAME}"
 
 : ${INSTALL_PREFIX:="/usr/local/bin"}
-: ${GOFISH_VERSION:="0.16.4"}
+: ${GOFISH_VERSION:="0.18.0"}
 
 if [[ $SKIP_BIN_INSTALL == "1" ]]; then
   echo "Skipping binary install"
@@ -63,7 +63,8 @@ initOS() {
 # verifySupported checks that the os/arch combination is supported for
 # binary builds.
 verifySupported() {
-  local supported="linux-amd64\ndarwin-amd64\ndarwin-arm64\nwindows-amd64\nlinux-386\nlinux-arm\nlinux-arm64\nlinux-ppc64le"
+  # local supported="linux-amd64\ndarwin-amd64\ndarwin-arm64\nwindows-amd64\nlinux-386\nlinux-arm\nlinux-arm64\nlinux-ppc64le"
+  local supported="linux-amd64\ndarwin-amd64\ndarwin-arm64\nwindows-amd64"
   if ! echo "${supported}" | grep -q "${OS}-${ARCH}"; then
     echo "No prebuilt binary for ${OS}-${ARCH}."
     exit 1
