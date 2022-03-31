@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/Masterminds/semver v1.5.0
-	github.com/Masterminds/vcs v1.13.1
+	github.com/Masterminds/vcs v1.13.3
 	github.com/bacongobbler/browser v1.1.0
 	github.com/gosuri/uitable v0.0.4
 	github.com/kyokomi/emoji/v2 v2.2.9
