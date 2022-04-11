@@ -25,8 +25,8 @@
 PROJECT_NAME="gofish"
 PROJECT_GH="tinned-fish/${PROJECT_NAME}"
 
-: ${INSTALL_PREFIX:="/usr/local/bin"}
 : ${GOFISH_VERSION:="0.18.2"}
+: ${INSTALL_PREFIX:="/usr/local"}
 
 if [[ $SKIP_BIN_INSTALL == "1" ]]; then
   echo "Skipping binary install"
@@ -58,7 +58,7 @@ initOS() {
            ;;
     # Minimalist GNU for Windows
     mingw*) OS='windows'
-            INSTALL_PREFIX="/c/ProgramData/bin"
+            INSTALL_PREFIX="/c/ProgramData"
             ;;
   esac
 }
@@ -106,10 +106,12 @@ installFile() {
   # Use * to also copy the file with the exe suffix on Windows
   if [ "${OS}" == "windows" ]; then
       mkdir -p "$INSTALL_PREFIX"
-      cp "$TMPDIR/$PROJECT_NAME.exe" "$INSTALL_PREFIX"
+      cp "$TMPDIR/$PROJECT_NAME.exe" "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}"
+      ln -s "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}/${PROJECT_NAME}.exe" "${INSTALL_PREFIX}/bin/${PROJECT_NAME}.exe"
   else
       sudo mkdir -p "$INSTALL_PREFIX"
-      sudo cp "$TMPDIR/$PROJECT_NAME" "$INSTALL_PREFIX"
+      sudo cp "$TMPDIR/$PROJECT_NAME.exe" "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}"
+      sudo ln -s "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}/${PROJECT_NAME}" "${INSTALL_PREFIX}/bin/${PROJECT_NAME}"
   fi
 }
 
@@ -130,7 +132,7 @@ testVersion() {
   echo "Run '$PROJECT_NAME init' to get started!"
   # To avoid to keep track of the Windows suffix,
   # call the plugin assuming it is in the PATH
-  PATH=$PATH:$INSTALL_PREFIX
+  PATH=$PATH:${INSTALL_PREFIX}/bin
   gofish -h > /dev/null
   set -e
 }
