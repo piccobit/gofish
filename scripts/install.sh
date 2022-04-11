@@ -100,9 +100,14 @@ installFile() {
   mkdir -p "$TMPDIR"
   tar -zxf "$TMP_CACHE_FILE" -C "$TMPDIR"
   echo "Preparing to install into ${INSTALL_PREFIX}"
-  # Use * to also copy the file withe the exe suffix on Windows
-  sudo mkdir -p "$INSTALL_PREFIX"
-  sudo cp "$TMPDIR/$OS-$ARCH/$PROJECT_NAME" "$INSTALL_PREFIX"
+  # Use * to also copy the file with the exe suffix on Windows
+  if [ $OS == "Windows" ]; then
+      mkdir -p "$INSTALL_PREFIX"
+      cp "$TMPDIR/$OS-$ARCH/$PROJECT_NAME" "$INSTALL_PREFIX"
+  else
+      sudo mkdir -p "$INSTALL_PREFIX"
+      sudo cp "$TMPDIR/$OS-$ARCH/$PROJECT_NAME" "$INSTALL_PREFIX"
+  fi
 }
 
 # fail_trap is executed if an error occurs.
