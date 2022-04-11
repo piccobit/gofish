@@ -54,9 +54,12 @@ initOS() {
 
   case "$OS" in
     # Msys support
-    msys*) OS='windows';;
+    msys*) OS='windows'
+           ;;
     # Minimalist GNU for Windows
-    mingw*) OS='windows';;
+    mingw*) OS='windows'
+            INSTALL_PREFIX="/c/ProgramData/bin"
+            ;;
   esac
 }
 
