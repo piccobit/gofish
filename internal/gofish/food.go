@@ -236,8 +236,15 @@ func (f *Food) GetPackage(os, arch string) *Package {
 // Linked checks to see if a particular package owned by this fish food is linked to /usr/local/bin.
 // This is just a check if the binaries symlinked in /usr/local/bin link back to the barrel.
 func (f *Food) Linked() bool {
+    var link string
+    var err error
+
 	barrelDir := filepath.Join(home.Barrel(), f.Name, f.Version)
-	link, err := os.Readlink(filepath.Join(home.BinPath(), f.Name))
+    if runtime.GOOS == "windows" {
+        link, err = os.Readlink(filepath.Join(home.BinPath(), f.Name + ".exe"))
+    } else {
+        link, err = os.Readlink(filepath.Join(home.BinPath(), f.Name))
+    }
 	if err != nil {
 		return false
 	}
@@ -246,10 +253,16 @@ func (f *Food) Linked() bool {
 
 // Link creates links to any linked resources owned by the package.
 func (f *Food) Link(pkg *Package) error {
+    var destPath string
+
 	barrelDir := filepath.Join(home.Barrel(), f.Name, f.Version)
 	for _, r := range pkg.Resources {
 		// TODO: run this in parallel
-		destPath := filepath.Join(home.HomePrefix, r.InstallPath)
+        if runtime.GOOS == "windows" {
+            destPath = filepath.Join(home.HomePrefix, r.InstallPath + ".exe")
+        } else {
+            destPath = filepath.Join(home.HomePrefix, r.InstallPath)
+        }
 		if err := os.MkdirAll(filepath.Dir(destPath), 0755); err != nil && !os.IsExist(err) {
 			return err
 		}
@@ -269,9 +282,15 @@ func (f *Food) Link(pkg *Package) error {
 func (f *Food) Unlink(pkg *Package) error {
 	for _, r := range pkg.Resources {
 		// TODO: check if the linked path we are about to remove is really owned by us
-		if err := os.RemoveAll(filepath.Join(home.HomePrefix, r.InstallPath)); err != nil {
-			return err
-		}
+        if runtime.GOOS == "windows" {
+            if err := os.RemoveAll(filepath.Join(home.HomePrefix, r.InstallPath + ".exe")); err != nil {
+                return err
+            }
+        } else {
+            if err := os.RemoveAll(filepath.Join(home.HomePrefix, r.InstallPath)); err != nil {
+                return err
+            }
+        }
 	}
 	return nil
 }
