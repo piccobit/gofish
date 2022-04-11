@@ -87,9 +87,9 @@ downloadFile() {
   TMP_CACHE_FILE="/tmp/${PROJECT_NAME}.tgz"
   echo "Downloading $DOWNLOAD_URL"
   if type "curl" > /dev/null; then
-    curl -L "$DOWNLOAD_URL" -o "$TMP_CACHE_FILE"
+    curl ${SKIP_SSL_VERIFICATION} -L "$DOWNLOAD_URL" -o "$TMP_CACHE_FILE"
   elif type "wget" > /dev/null; then
-    wget -q -O "$TMP_CACHE_FILE" "$DOWNLOAD_URL"
+    wget ${SKIP_SSL_VERIFICATION} -q -O "$TMP_CACHE_FILE" "$DOWNLOAD_URL"
   fi
 }
 
