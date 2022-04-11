@@ -105,11 +105,11 @@ installFile() {
   echo "Preparing to install into ${INSTALL_PREFIX}"
   # Use * to also copy the file with the exe suffix on Windows
   if [ "${OS}" == "windows" ]; then
-      mkdir -p "$INSTALL_PREFIX"
+      mkdir -p "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}"
       cp "$TMPDIR/$PROJECT_NAME.exe" "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}"
       ln -s "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}/${PROJECT_NAME}.exe" "${INSTALL_PREFIX}/bin/${PROJECT_NAME}.exe"
   else
-      sudo mkdir -p "$INSTALL_PREFIX"
+      sudo mkdir -p "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}"
       sudo cp "$TMPDIR/$PROJECT_NAME.exe" "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}"
       sudo ln -s "$INSTALL_PREFIX/${PROJECT_NAME}/Barrel/${PROJECT_NAME}/${GOFISH_VERSION}/${PROJECT_NAME}" "${INSTALL_PREFIX}/bin/${PROJECT_NAME}"
   fi
