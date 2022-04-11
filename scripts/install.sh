@@ -26,7 +26,7 @@ PROJECT_NAME="gofish"
 PROJECT_GH="tinned-fish/${PROJECT_NAME}"
 
 : ${INSTALL_PREFIX:="/usr/local/bin"}
-: ${GOFISH_VERSION:="0.18.1"}
+: ${GOFISH_VERSION:="0.18.2"}
 
 if [[ $SKIP_BIN_INSTALL == "1" ]]; then
   echo "Skipping binary install"
