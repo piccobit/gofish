@@ -25,7 +25,7 @@
 PROJECT_NAME="gofish"
 PROJECT_GH="tinned-fish/${PROJECT_NAME}"
 
-: ${GOFISH_VERSION:="0.18.2"}
+: ${GOFISH_VERSION:="0.18.3"}
 : ${INSTALL_PREFIX:="/usr/local"}
 
 if [[ $SKIP_BIN_INSTALL == "1" ]]; then
