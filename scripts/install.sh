@@ -101,7 +101,7 @@ installFile() {
   tar -zxf "$TMP_CACHE_FILE" -C "$TMPDIR"
   echo "Preparing to install into ${INSTALL_PREFIX}"
   # Use * to also copy the file with the exe suffix on Windows
-  if [ $OS == "Windows" ]; then
+  if [ "${OS}" == "Windows" ]; then
       mkdir -p "$INSTALL_PREFIX"
       cp "$TMPDIR/$OS-$ARCH/$PROJECT_NAME" "$INSTALL_PREFIX"
   else
