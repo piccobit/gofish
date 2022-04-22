@@ -14,7 +14,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jdxcode/netrc"
+	"github.com/git-lfs/go-netrc/netrc"
 	"github.com/mholt/archiver/v3"
 	log "github.com/sirupsen/logrus"
 	"github.com/tinned-fish/gofish/internal/ohai"
@@ -387,13 +387,17 @@ func (f *Food) DownloadTo(pkg *Package, filePath string) error {
 func userNetrcCredentials(host string) (login, password string) {
 	var netrcMachine *netrc.Machine
 	for _, netrcFilePath := range []string{os.Getenv("NETRC"), home.GPGNetrc(), home.Netrc()} {
-		if netrcFile, err := netrc.Parse(netrcFilePath); err != nil {
-			if !os.IsNotExist(err) {
-				log.Errorln(err)
+		if len(netrcFilePath) > 0 {
+			if netrcFile, err := netrc.ParseFile(netrcFilePath); err != nil {
+				if !os.IsNotExist(err) {
+					log.Errorln(err)
+				}
+			} else {
+				netrcMachine = netrcFile.FindMachine(host, login)
+				if netrcMachine != nil {
+					return netrcMachine.Login, netrcMachine.Password
+				}
 			}
-		} else {
-			netrcMachine = netrcFile.Machine(host)
-			return netrcMachine.Get("login"), netrcMachine.Get("password")
 		}
 	}
 	return "", ""

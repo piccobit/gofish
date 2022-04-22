@@ -6,8 +6,8 @@ require (
 	github.com/Masterminds/semver v1.5.0
 	github.com/Masterminds/vcs v1.13.3
 	github.com/bacongobbler/browser v1.1.0
+	github.com/git-lfs/go-netrc v0.0.0-20210914205454-f0c862dd687a
 	github.com/gosuri/uitable v0.0.4
-	github.com/jdxcode/netrc v0.0.0-20210204082910-926c7f70242a
 	github.com/kyokomi/emoji/v2 v2.2.9
 	github.com/lithammer/fuzzysearch v1.1.3
 	github.com/mholt/archiver/v3 v3.5.1
