@@ -1,4 +1,4 @@
-$version = "0.19.1"
+$version = "0.19.2"
 if (-Not $env:VERSION -eq $null) {
   $version = "$env:VERSION"
 }
@@ -15,7 +15,7 @@ $file = Join-Path $env:TEMP "gofish-${version}-windows-amd64.tar.gz"
 Write-Output "Downloading '$url'"
 (new-object System.Net.WebClient).DownloadFile($url, $file)
 
-$installPath = "$env:SYSTEMDRIVE\ProgramData\bin"
+$installPath = "$env:ProgramData\bin"
 if (![System.IO.Directory]::Exists($installPath)) {[void][System.IO.Directory]::CreateDirectory($installPath)}
 Write-Output "Preparing to install into '$installPath'"
 
