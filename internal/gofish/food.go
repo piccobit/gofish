@@ -185,10 +185,13 @@ func (f *Food) Install() error {
 
 // Uninstall attempts to uninstall the package, returning errors if it fails.
 func (f *Food) Uninstall() error {
+	var err error
+
 	pkg := f.GetPackage(runtime.GOOS, runtime.GOARCH)
 	if pkg == nil {
 		return nil
 	}
+
 	if f.Linked() {
 		if err := f.Unlink(pkg); err != nil {
 			return err
@@ -196,9 +199,18 @@ func (f *Food) Uninstall() error {
 
 		ohai.Ohaif("Uninstalled version '%s' of package '%s'", f.Version, f.Name)
 	}
+
 	barrelDir := filepath.Join(home.Barrel(), f.Name, f.Version)
 	os.Remove(filepath.Join(home.Barrel(), f.Name, receipt.ReceiptFilename))
-	return os.RemoveAll(barrelDir)
+	err = os.RemoveAll(barrelDir)
+	if err != nil {
+		return err
+	}
+
+	cacheDir := filepath.Join(home.Cache(), f.Name, f.Version)
+	os.Remove(filepath.Join(home.Cache(), f.Name, receipt.ReceiptFilename))
+
+	return os.RemoveAll(cacheDir)
 }
 
 func unarchiveOrCopy(src, dest, urlPath string) error {
