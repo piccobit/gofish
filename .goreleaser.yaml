@@ -7,8 +7,6 @@ builds:
   flags:
   - -trimpath
   tags:
-  - osusergo
-  - netgo
   - static_build
   env:
   - CGO_ENABLED=0
