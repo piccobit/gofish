@@ -8,7 +8,7 @@ require (
 	github.com/bacongobbler/browser v1.1.0
 	github.com/git-lfs/go-netrc v0.0.0-20210914205454-f0c862dd687a
 	github.com/gosuri/uitable v0.0.4
-	github.com/kyokomi/emoji/v2 v2.2.10
+	github.com/kyokomi/emoji/v2 v2.2.11
 	github.com/lithammer/fuzzysearch v1.1.5
 	github.com/mholt/archiver/v3 v3.5.1
 	github.com/sirupsen/logrus v1.9.0
