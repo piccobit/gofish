@@ -14,7 +14,7 @@ require (
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.5.0
 	github.com/yuin/gluamapper v0.0.0-20150323120927-d836955830e7
-	github.com/yuin/gopher-lua v0.0.0-20210529063254-f4c35e4016d9
+	github.com/yuin/gopher-lua v1.1.0
 )
 
 require (
