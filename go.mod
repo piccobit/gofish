@@ -9,7 +9,7 @@ require (
 	github.com/git-lfs/go-netrc v0.0.0-20210914205454-f0c862dd687a
 	github.com/gosuri/uitable v0.0.4
 	github.com/kyokomi/emoji/v2 v2.2.12
-	github.com/lithammer/fuzzysearch v1.1.5
+	github.com/lithammer/fuzzysearch v1.1.8
 	github.com/mholt/archiver/v3 v3.5.1
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.6.1
@@ -35,6 +35,6 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
-	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
-	golang.org/x/text v0.3.8 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/text v0.9.0 // indirect
 )
