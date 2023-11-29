@@ -11,7 +11,7 @@ require (
 	github.com/kyokomi/emoji/v2 v2.2.12
 	github.com/lithammer/fuzzysearch v1.1.5
 	github.com/mholt/archiver/v3 v3.5.1
-	github.com/sirupsen/logrus v1.9.0
+	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.6.1
 	github.com/yuin/gluamapper v0.0.0-20150323120927-d836955830e7
 	github.com/yuin/gopher-lua v1.1.0
